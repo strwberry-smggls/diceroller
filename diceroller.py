@@ -17,6 +17,8 @@ if st.button('Würfeln'):
         if r.lower() != "leer":
             st.image(result_to_pic[r], width=30)
 
-st.write(hexresults)
-st.write(janresults)
+    st.write("Hexxen-Würfel Ergebnisse:")
+    st.write(hexresults)
+    st.write("Janus-Würfel Ergebnisse:")
+    st.write(janresults)
 st.text("Icons Credit: Raven - Freepik, Zeus - Eucalyp, Star - Freepik")
