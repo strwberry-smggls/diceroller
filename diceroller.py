@@ -6,7 +6,8 @@ st.title('Diceroller')
 hexdice = st.text_input("Anzahl Hexxen-Würfel", value=5)
 jandice = st.text_input("Bonus/Malus", value=0)
 
-
+last_hex_results = []
+last_jan_results = []
 if st.button('Würfeln'):
     hexresults = [random.choice(["Leer", "Leer", "leer", "Esprit", "Hex", "Hex"]) for i in range(int(hexdice))]
     for r in hexresults:
@@ -16,7 +17,10 @@ if st.button('Würfeln'):
     for r in janresults:
         if r.lower() != "leer":
             st.image(result_to_pic[r], width=30)
-
+    last_hex_results = hexresults
+    last_jan_results = janresults
+    
+with st.expander("Vollständiges Würfelergebnis"):
     st.write("Hexxen-Würfel Ergebnisse:")
     st.write(hexresults)
     st.write("Janus-Würfel Ergebnisse:")
